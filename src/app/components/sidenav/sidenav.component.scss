@@ -1,0 +1,19 @@
+.active{
+    background-color: lightgray;
+}
+
+.mat-drawer{
+    width: 200px;
+    min-width: 200px;
+    padding: 16px;
+    background-color: rgb(236, 195, 120);
+}
+
+.mat-drawer-container{
+    position: fixed;
+    height: 89%;
+    min-height: 89%;
+    width: 100%;
+    min-width: 100%;
+    background-color: transparent;
+}

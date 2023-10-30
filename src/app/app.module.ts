@@ -3,14 +3,67 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { HeaderComponent } from './components/header/header.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MatButtonModule } from '@angular/material/button';
+import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import {MatIconModule} from '@angular/material/icon';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {NgIf} from '@angular/common';
+import { MatListModule } from '@angular/material/list';
+import { FormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { RouterModule } from '@angular/router';
+import { SidenavComponent } from './components/sidenav/sidenav.component';
+import {MatSnackBarModule} from '@angular/material/snack-bar';
+import { SignupComponent } from './components/signup/signup.component';
+import {MatDialogModule} from '@angular/material/dialog';
+import { NgxUiLoaderConfig , NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatFormFieldModule } from '@angular/material/form-field';
+import { MatInputModule } from '@angular/material/input';
+
+const ngxUiLoaderConfig : NgxUiLoaderConfig = {
+  text : "Loading...",
+  textColor : "#FFFFFF",
+  textPosition : "center-center",
+  bgsColor : "#7b1fa2",
+  fgsColor : "#7b1fa2",
+  fgsType : SPINNER.squareJellyBox,
+  fgsSize : 100,
+  hasProgressBar : false
+}
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HeaderComponent,
+    SidenavComponent,
+    SignupComponent,
+    
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatSlideToggleModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatSidenavModule,
+    NgIf,
+    MatListModule,
+    FormsModule,
+    HttpClientModule,
+    RouterModule,
+    HttpClientModule,
+    MatSnackBarModule,
+    MatDialogModule,
+    NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
+    ReactiveFormsModule,
+    MatFormFieldModule,
+    MatInputModule
   ],
   providers: [],
   bootstrap: [AppComponent]
