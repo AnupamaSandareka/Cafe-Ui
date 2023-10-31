@@ -37,7 +37,7 @@ export class SignupComponent implements OnInit{
     })
   }
 
-  valodateSubmit(){
+  validateSubmit(){
     if(this.signupForm.controls['password'].value != this.signupForm.controls['confirmPassword'].value){
       return true;
     }

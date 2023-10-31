@@ -58,7 +58,7 @@
                 <mat-error *ngIf="signupForm.controls.confirmPassword.touched && signupForm.controls.confirmPassword.invalid">
                     <span *ngIf="signupForm.controls.confirmPassword.errors.required">This field is mandatory.</span>
                 </mat-error>
-                <mat-hint *ngIf="valodateSubmit() && !(signupForm.controls.confirmPassword.invalid)">
+                <mat-hint *ngIf="validateSubmit() && !(signupForm.controls.confirmPassword.invalid)">
                     <span>New Password and Confirm Password does not match.</span>
                 </mat-hint>
             </mat-form-field>
@@ -67,7 +67,7 @@
 </mat-dialog-content>
 
 <mat-dialog-actions align="end">
-    <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="valodateSubmit() || !(signupForm.valid && signupForm.dirty)">
+    <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]="validateSubmit() || !(signupForm.valid && signupForm.dirty)">
         <mat-icon>save</mat-icon>Signup
     </button>
     <button mat-raised-button color="warn" mat-dialog-close> <mat-icon>cancel</mat-icon> Close</button>

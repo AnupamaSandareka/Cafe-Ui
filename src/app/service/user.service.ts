@@ -14,4 +14,9 @@ export class UserService {
     return this.httpClient.post(this.API_URL+"/user/signup", data,
       {headers:new HttpHeaders().set('Contet-Type','application/json')});
   }
+
+  forgotPassword(data:any){
+    return this.httpClient.post(this.API_URL+"/user/forgotPassword", data,
+      {headers:new HttpHeaders().set('Contet-Type','application/json')});
+  }
 }

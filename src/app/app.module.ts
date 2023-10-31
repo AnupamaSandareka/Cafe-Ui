@@ -23,6 +23,7 @@ import { NgxUiLoaderConfig , NgxUiLoaderModule, SPINNER } from 'ngx-ui-loader';
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
+import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -41,6 +42,7 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     HeaderComponent,
     SidenavComponent,
     SignupComponent,
+    ForgotPasswordComponent,
     
   ],
   imports: [
