@@ -12,11 +12,19 @@ export class UserService {
 
   signup(data:any){
     return this.httpClient.post(this.API_URL+"/user/signup", data,
-      {headers:new HttpHeaders().set('Contet-Type','application/json')});
+      {headers:new HttpHeaders().set('Content-Type','application/json')
+    });
   }
 
   forgotPassword(data:any){
     return this.httpClient.post(this.API_URL+"/user/forgotPassword", data,
-      {headers:new HttpHeaders().set('Contet-Type','application/json')});
+      {headers:new HttpHeaders().set('Content-Type','application/json')
+    });
+  }
+
+  login(data:any){
+    return this.httpClient.post(this.API_URL+"/user/login" , data, {
+      headers : new HttpHeaders().set('Content-Type','application/json')
+    });
   }
 }
