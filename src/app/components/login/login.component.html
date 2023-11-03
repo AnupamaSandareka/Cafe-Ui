@@ -35,6 +35,8 @@
     </form>
 </mat-dialog-content>
 
+<a class="ps-4" (click)="handleForgotPasswordAction()" >Forgot Password ?</a>
+
 <mat-dialog-actions align="end">
     <button mat-raised-button color="primary" type="submit" (click)="handleSubmit()" [disabled]=" !(loginForm.valid && loginForm.dirty)">
         <mat-icon>login</mat-icon>Login

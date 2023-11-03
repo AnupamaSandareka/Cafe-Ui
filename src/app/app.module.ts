@@ -25,6 +25,7 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './components/login/login.component';
+import { DashboardComponent } from './components/dashboard/dashboard.component';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -45,6 +46,7 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     SignupComponent,
     ForgotPasswordComponent,
     LoginComponent,
+    DashboardComponent,
     
   ],
   imports: [

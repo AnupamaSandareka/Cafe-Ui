@@ -10,3 +10,14 @@
 .custom-bg-color{
     background-color: #04364A;
 }
+
+a {
+    font-weight: normal; /* Set the initial font weight */
+    transition: font-weight 0.3s; /* Add a smooth transition for the font weight change */
+    cursor: pointer;
+  }
+
+  a:hover {
+    font-weight: bold; /* Change the font weight on hover */
+    cursor: pointer;
+  }

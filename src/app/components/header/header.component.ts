@@ -2,8 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogConfig } from '@angular/material/dialog';
 import { MenuService } from 'src/app/service/menu.service';
 import { SignupComponent } from '../signup/signup.component';
-import { ForgotPasswordComponent } from '../forgot-password/forgot-password.component';
 import { LoginComponent } from '../login/login.component';
+import { Router } from '@angular/router';
+import { UserService } from 'src/app/service/user.service';
 
 @Component({
   selector: 'app-header',
@@ -14,11 +15,19 @@ export class HeaderComponent implements OnInit{
 
   constructor(
     private menuService:MenuService,
-    private dialog : MatDialog
+    private dialog : MatDialog,
+    private userService : UserService,
+    private roter :  Router,
+
     ){}
 
   ngOnInit(): void {
-    
+    this.userService.checkToken().subscribe((response : any) => {
+      this.roter.navigate(['/dashboard'])
+    } , (error) => {
+      console.log((error));
+      
+    })
   }
 
   toggleMenu(){
@@ -29,12 +38,6 @@ export class HeaderComponent implements OnInit{
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = "550px";
     this.dialog.open(SignupComponent,dialogConfig);
-  }
-
-  handleForgotPasswordAction(){
-    const dialogConfig = new MatDialogConfig();
-    dialogConfig.width = "550px";
-    this.dialog.open(ForgotPasswordComponent,dialogConfig);
   }
 
   handleLoginAction(){
