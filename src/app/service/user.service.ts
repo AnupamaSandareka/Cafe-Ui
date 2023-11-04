@@ -23,6 +23,7 @@ export class UserService {
   }
 
   login(data:any){
+    
     return this.httpClient.post(this.API_URL+"/user/login" , data, {
       headers : new HttpHeaders().set('Content-Type','application/json')
     });
@@ -31,4 +32,13 @@ export class UserService {
   checkToken(){
     return this.httpClient.get(this.API_URL+"/user/checkToken");
   }
+
+  isAdmin(validateData : any){
+    
+    return this.httpClient.post(this.API_URL+"/user/verifyAdmin" , validateData , {
+      headers : new HttpHeaders().set('Content-Type','application/json')
+    });
+
+  }
+
 }

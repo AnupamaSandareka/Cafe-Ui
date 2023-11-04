@@ -43,11 +43,24 @@ export class LoginComponent implements OnInit{
       email : formData.email,
       password : formData.password
     }
+
     this.userService.login(data).subscribe((response : any) => {
       this.ngxService.stop();
       this.dialogRef.close();
+      localStorage.setItem('email',data.email);
+      localStorage.setItem('password',data.password);
       localStorage.setItem('token',response.token);
-      this.router.navigate(['cafe/dashboard']);
+      
+      var validateData = {
+        email : localStorage.getItem('email'),
+        password : localStorage.getItem('password')
+      }
+      this.userService.isAdmin(validateData).subscribe(response => {
+        if(response.isAdmin){
+        }
+      })
+
+      
     } , error => {
       if(error.error?.message){
         this.ngxService.stop();
