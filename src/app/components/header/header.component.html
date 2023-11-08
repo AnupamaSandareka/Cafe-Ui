@@ -7,8 +7,9 @@
       <span class="navbar-brand" href="#"> Cafe Management System</span>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <span class="example-spacer"></span>
-        <button type="submit" class="btn btn-success me-2" (click)="handleLoginAction()" >Login</button>
-        <button  type="submit" class="btn btn-primary me-2" (click)="handleSignupAction()" >Signup</button>
+        <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-success me-2" (click)="handleLoginAction()" >Login</button>
+        <button *ngIf="!isLoggedIn()" type="submit" class="btn btn-primary me-2" (click)="handleSignupAction()" >Signup</button>
+        <button *ngIf="isLoggedIn()" type="submit" class="btn btn-danger me-2" (click)="handleLogoutAction()" >Logout</button>
       </div>
     </div>
   </nav>

@@ -5,6 +5,7 @@ import { SignupComponent } from '../signup/signup.component';
 import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
+import { AuthService } from 'src/app/service/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -18,7 +19,7 @@ export class HeaderComponent implements OnInit{
     private dialog : MatDialog,
     private userService : UserService,
     private roter :  Router,
-
+    private authService : AuthService
     ){}
 
   ngOnInit(): void {
@@ -44,5 +45,14 @@ export class HeaderComponent implements OnInit{
     const dialogConfig = new MatDialogConfig();
     dialogConfig.width = "550px";
     this.dialog.open(LoginComponent,dialogConfig);
+  }
+
+  isLoggedIn(){
+    return this.authService.isLoggedIn();
+  }
+
+  handleLogoutAction(){
+    this.authService.clear();
+    this.roter.navigate(['/']);
   }
 }

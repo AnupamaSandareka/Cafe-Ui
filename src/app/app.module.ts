@@ -26,6 +26,7 @@ import { MatInputModule } from '@angular/material/input';
 import { ForgotPasswordComponent } from './components/forgot-password/forgot-password.component';
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
+import { MatCardModule } from '@angular/material/card';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -69,7 +70,8 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     NgxUiLoaderModule.forRoot(ngxUiLoaderConfig),
     ReactiveFormsModule,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatCardModule
   ],
   providers: [],
   bootstrap: [AppComponent]

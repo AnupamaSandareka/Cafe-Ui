@@ -12,7 +12,7 @@ export class DashboardService {
     private httpClient : HttpClient
   ) { }
 
-  getDetails(){
+  getDetails() : any{
     this.httpClient.get(this.API_URL+'/dashboard/details');
   }
 }

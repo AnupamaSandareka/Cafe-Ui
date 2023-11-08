@@ -1,5 +1,35 @@
-<div class="container" style="height: 500px; width: 500px;">
-    <div class="card">
-        <span>You are in dashboard</span>
+<div class="container mt-5">
+    <mat-card>
+        <h2><b><span>Dashboard</span></b></h2>
+    </mat-card>
+    <br>
+    <div class="row">
+        <div class="col">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Categoty</h2>
+                    <h1 class="title">{{data?.category}}</h1>
+                    <p><button class="button" [routerLink]="['/category']">View Category</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Product</h2>
+                    <h1 class="title">{{data?.product}}</h1>
+                    <p><button class="button" [routerLink]="['/product']">View Product</button></p>
+                </div>
+            </div>
+        </div>
+        <div class="col">
+            <div class="card">
+                <div class="container">
+                    <h2 class="title">Total Bill</h2>
+                    <h1 class="title">{{data?.bill}}</h1>
+                    <p><button class="button" [routerLink]="['/category']">View Bill</button></p>
+                </div>
+            </div>
+        </div>
     </div>
 </div>

@@ -22,4 +22,15 @@ export class AuthService {
     }
   }
 
+  public isLoggedIn() : boolean {
+    const role = localStorage.getItem('role');
+    const token = localStorage.getItem('token');
+  
+    return role !== null && token !== null;
+  }
+
+  public clear(){
+    localStorage.clear();
+  }
+
 }

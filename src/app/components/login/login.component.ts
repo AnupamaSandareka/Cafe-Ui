@@ -45,20 +45,14 @@ export class LoginComponent implements OnInit{
     }
 
     this.userService.login(data).subscribe((response : any) => {
+      
       this.ngxService.stop();
       this.dialogRef.close();
-      localStorage.setItem('email',data.email);
-      localStorage.setItem('password',data.password);
+      localStorage.setItem('role',response.role);
       localStorage.setItem('token',response.token);
-      
-      var validateData = {
-        email : localStorage.getItem('email'),
-        password : localStorage.getItem('password')
+      if(response.role === 'admin'){
+        this.router.navigate(['/dashboard']);
       }
-      this.userService.isAdmin(validateData).subscribe(response => {
-        if(response.isAdmin){
-        }
-      })
 
       
     } , error => {
