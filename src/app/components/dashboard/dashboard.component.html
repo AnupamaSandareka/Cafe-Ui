@@ -1,35 +1,50 @@
-<div class="container mt-5">
-    <mat-card>
-        <h2><b><span>Dashboard</span></b></h2>
-    </mat-card>
-    <br>
-    <div class="row">
-        <div class="col">
-            <div class="card">
-                <div class="container">
-                    <h2 class="title">Total Categoty</h2>
-                    <h1 class="title">{{data?.category}}</h1>
-                    <p><button class="button" [routerLink]="['/category']">View Category</button></p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="container">
-                    <h2 class="title">Total Product</h2>
-                    <h1 class="title">{{data?.product}}</h1>
-                    <p><button class="button" [routerLink]="['/product']">View Product</button></p>
-                </div>
-            </div>
-        </div>
-        <div class="col">
-            <div class="card">
-                <div class="container">
-                    <h2 class="title">Total Bill</h2>
-                    <h1 class="title">{{data?.bill}}</h1>
-                    <p><button class="button" [routerLink]="['/category']">View Bill</button></p>
-                </div>
-            </div>
-        </div>
+<!-- dashboard.component.html -->
+
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <app-sidebar></app-sidebar>
     </div>
-</div>
+  
+    <!-- Main content -->
+    <div class="main-content">
+      <mat-card>
+        <b><span style="font-family: 'Arial', sans-serif; color: #001524; font-size: 24px; padding: 15px;">Dashboard</span></b>
+      </mat-card>
+  
+      <br>
+  
+      <div class="row">
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2 class="title"><b>Total Category</b></h2>
+              <h1 class="title"><b>{{data.category}}</b></h1>
+              <p><button class="button" [routerLink]="['/category']" style="background-color: #860A35; width: 100%; font-size: 18px;">View Category</button></p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2 class="title"><b>Total Product</b></h2>
+              <h1 class="title"><b>{{data.product}}</b></h1>
+              <p><button class="button" [routerLink]="['/product']" style="background-color: #860A35; width: 100%; font-size: 18px;">View Product</button></p>
+            </div>
+          </div>
+        </div>
+  
+        <div class="column">
+          <div class="card">
+            <div class="container">
+              <h2 class="title"><b>Total Bill</b></h2>
+              <h1 class="title"><b>{{data.bill}}</b></h1>
+              <p><button class="button" [routerLink]="['/bill']" style="background-color: #860A35; width: 100%; font-size: 18px;">View Bill</button></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  

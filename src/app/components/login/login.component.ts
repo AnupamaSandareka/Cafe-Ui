@@ -36,37 +36,43 @@ export class LoginComponent implements OnInit{
     })
   }
 
-  handleSubmit(){
+  handleSubmit() {
     this.ngxService.start();
     var formData = this.loginForm.value;
     var data = {
-      email : formData.email,
-      password : formData.password
-    }
-
-    this.userService.login(data).subscribe((response : any) => {
-      
-      this.ngxService.stop();
-      this.dialogRef.close();
-      localStorage.setItem('role',response.role);
-      localStorage.setItem('token',response.token);
-      if(response.role === 'admin'){
-        this.router.navigate(['/dashboard']);
-      }
-
-      
-    } , error => {
-      if(error.error?.message){
+      email: formData.email,
+      password: formData.password,
+    };
+  
+    this.userService.login(data).subscribe(
+      (response: any) => {
         this.ngxService.stop();
         this.dialogRef.close();
-        this.responseMessage = error.error?.message;
+        localStorage.setItem('role', response.role);
+        localStorage.setItem('token', response.token);
+  
+        if (response.role === 'admin') {
+          this.router.navigate(['/dashboard']);
+        } else {
+          // User is not an admin, handle it accordingly
+          this.responseMessage = 'You are not authorized to access the dashboard.';
+          this.snackBarService.openSnackBar(this.responseMessage, GlobalConstants.error);
+        }
+      },
+      (error) => {
+        this.ngxService.stop();
+        if (error.error?.message) {
+          this.responseMessage = error.error?.message;
+        } else {
+          this.responseMessage = GlobalConstants.genericError;
+        }
+        this.snackBarService.openSnackBar(this.responseMessage, GlobalConstants.error);
+  
+        // Close the dialog on error (invalid credentials)
+        this.dialogRef.close();
       }
-      else{
-        this.responseMessage = GlobalConstants.genericError;
-      }
-      this.snackBarService.openSnackBar(this.responseMessage , GlobalConstants.error);
-    })
-  }
+    );
+  }  
 
   handleForgotPasswordAction(){
     const dialogConfig = new MatDialogConfig();

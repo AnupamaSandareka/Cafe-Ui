@@ -6,6 +6,7 @@ import { LoginComponent } from '../login/login.component';
 import { Router } from '@angular/router';
 import { UserService } from 'src/app/service/user.service';
 import { AuthService } from 'src/app/service/auth.service';
+import { ConformationComponent } from '../confirmation/conformation.component';
 
 @Component({
   selector: 'app-header',
@@ -18,13 +19,13 @@ export class HeaderComponent implements OnInit{
     private menuService:MenuService,
     private dialog : MatDialog,
     private userService : UserService,
-    private roter :  Router,
+    private router :  Router,
     private authService : AuthService
     ){}
 
   ngOnInit(): void {
     this.userService.checkToken().subscribe((response : any) => {
-      this.roter.navigate(['/dashboard'])
+      this.router.navigate(['/dashboard'])
     } , (error) => {
       console.log((error));
       
@@ -52,7 +53,19 @@ export class HeaderComponent implements OnInit{
   }
 
   handleLogoutAction(){
-    this.authService.clear();
-    this.roter.navigate(['/']);
+    const dialogConfig = new MatDialogConfig();
+    dialogConfig.width = "350px";
+    dialogConfig.data = {
+      message : ' Logout?',
+      confirmation : true
+    }
+    const dialogRef = this.dialog.open(ConformationComponent, dialogConfig);
+    const sub = dialogRef.componentInstance.onEmitStatusChange.subscribe( (response) => {
+      dialogRef.close();
+      localStorage.clear();
+      this.router.navigate(['/']);
+    })
+    
+    
   }
 }

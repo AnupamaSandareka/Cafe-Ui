@@ -32,6 +32,7 @@ export class ForgotPasswordComponent implements OnInit{
     }
 
     handleSubmit(){
+      console.log('Handling submit...');
       this.ngxService.start();
       var formData = this.forgotPasswordForm.value;
       var data = {

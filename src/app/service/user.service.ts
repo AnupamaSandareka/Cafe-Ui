@@ -33,4 +33,17 @@ export class UserService {
     return this.httpClient.get(this.API_URL+"/user/checkToken");
   }
 
+  changePassword(data : any) {
+
+    // Assuming you have a function to get the JWT token from where it is stored
+  const jwtToken = localStorage.getItem('token');
+
+  // Include the JWT token in the Authorization header
+  const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.post(this.API_URL+"/user/changePassword", data, {headers});
+  }
+
 }

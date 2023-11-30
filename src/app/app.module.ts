@@ -27,6 +27,11 @@ import { ForgotPasswordComponent } from './components/forgot-password/forgot-pas
 import { LoginComponent } from './components/login/login.component';
 import { DashboardComponent } from './components/dashboard/dashboard.component';
 import { MatCardModule } from '@angular/material/card';
+import { HomeComponent } from './components/home/home.component';
+import { ManageCategoryComponent } from './components/manage-category/manage-category.component';
+import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { ConformationComponent } from './components/confirmation/conformation.component';
+import { ChangePasswordComponent } from './components/change-password/change-password.component';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -48,6 +53,11 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     ForgotPasswordComponent,
     LoginComponent,
     DashboardComponent,
+    HomeComponent,
+    ManageCategoryComponent,
+    SidebarComponent,
+    ConformationComponent,
+    ChangePasswordComponent,
     
   ],
   imports: [
@@ -62,7 +72,6 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     NgIf,
     MatListModule,
     FormsModule,
-    HttpClientModule,
     RouterModule,
     HttpClientModule,
     MatSnackBarModule,
