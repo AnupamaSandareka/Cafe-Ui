@@ -16,4 +16,7 @@ export class GlobalConstants{
     //Variable
     public static error : string = 'error';
 
+    //API URL
+    public static url : string = "http://localhost:8081";
+
 }

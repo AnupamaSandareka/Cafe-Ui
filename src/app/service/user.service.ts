@@ -1,12 +1,13 @@
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import { GlobalConstants } from '../shared/global-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class UserService {
 
-  API_URL = "http://localhost:8081";
+  API_URL = GlobalConstants.url;
 
   constructor(private httpClient:HttpClient) { }
 

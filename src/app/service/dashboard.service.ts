@@ -1,13 +1,14 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AuthService } from './auth.service';
+import { GlobalConstants } from '../shared/global-constants';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DashboardService {
 
-  API_URL = "http://localhost:8081";
+  API_URL = GlobalConstants.url;
 
   constructor(
     private httpClient : HttpClient,

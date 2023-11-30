@@ -32,6 +32,8 @@ import { ManageCategoryComponent } from './components/manage-category/manage-cat
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { ConformationComponent } from './components/confirmation/conformation.component';
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
+import { MatTableModule } from '@angular/material/table';
+import { CategoryComponent } from './components/category/category.component';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -58,6 +60,7 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     SidebarComponent,
     ConformationComponent,
     ChangePasswordComponent,
+    CategoryComponent,
     
   ],
   imports: [
@@ -80,7 +83,8 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     ReactiveFormsModule,
     MatFormFieldModule,
     MatInputModule,
-    MatCardModule
+    MatCardModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -9,7 +9,7 @@ import { ChangePasswordComponent } from '../change-password/change-password.comp
 })
 export class SidebarComponent {
 
-  role: any;
+  role: any = localStorage.getItem('role');
 
   constructor(
     private dialog : MatDialog

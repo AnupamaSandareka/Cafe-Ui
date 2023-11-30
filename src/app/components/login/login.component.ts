@@ -50,14 +50,7 @@ export class LoginComponent implements OnInit{
         this.dialogRef.close();
         localStorage.setItem('role', response.role);
         localStorage.setItem('token', response.token);
-  
-        if (response.role === 'admin') {
-          this.router.navigate(['/dashboard']);
-        } else {
-          // User is not an admin, handle it accordingly
-          this.responseMessage = 'You are not authorized to access the dashboard.';
-          this.snackBarService.openSnackBar(this.responseMessage, GlobalConstants.error);
-        }
+        this.router.navigate(['/dashboard']);
       },
       (error) => {
         this.ngxService.stop();
