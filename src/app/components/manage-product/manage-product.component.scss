@@ -2,71 +2,72 @@
 
 .dashboard-container {
     display: flex;
-  }
-  
-  .sidebar {
-    width: 250px; /* Adjust the width as needed */
+}
+
+.sidebar {
+    width: 250px;
+    /* Adjust the width as needed */
     background-color: #f0f0f0;
     padding: 20px;
     height: 100vh;
-  }
-  
-  .main-content {
+}
+
+.main-content {
     flex: 1;
     padding: 20px;
-  }
-  
-  .row {
+}
+
+.row {
     display: flex;
     flex-wrap: wrap;
-  }
-  
-  .column {
+}
+
+.column {
     flex: 1;
     margin: 10px;
-  }
-  
-  .card {
+}
+
+.card {
     border: 1px solid #ddd;
     border-radius: 8px;
     padding: 15px;
-  }
-  
-  .container {
+}
+
+.container {
     text-align: center;
-  }
-  
-  .title {
+}
+
+.title {
     font-size: 18px;
-  }
-  
-  .button {
+}
+
+.button {
     background-color: #860A35;
     color: #fff;
     padding: 10px 15px;
     border: none;
     border-radius: 5px;
     cursor: pointer;
-  }
+}
 
-  .float-right{
+.float-right {
     float: right;
-  }
+}
 
-  mat-card{
+mat-card {
     padding: 20px;
-  }
+}
 
-  table{
+table {
     width: 100%;
-  }
+}
 
-  ::ng-deep .highlight{
+::ng-deep .highlight {
     color: white;
     background: #673AB7;
-  }
+}
 
-  .card-header {
+.card-header {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -80,6 +81,6 @@
     text-align: center;
 }
 
-.main-content{
-  background-color: #D2E0FB;
+.main-content {
+    background-color: #D2E0FB;
 }

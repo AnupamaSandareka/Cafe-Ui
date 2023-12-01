@@ -34,6 +34,10 @@ import { ConformationComponent } from './components/confirmation/conformation.co
 import { ChangePasswordComponent } from './components/change-password/change-password.component';
 import { MatTableModule } from '@angular/material/table';
 import { CategoryComponent } from './components/category/category.component';
+import { ManageProductComponent } from './components/manage-product/manage-product.component';
+import { ProductComponent } from './components/product/product.component';
+import { MatSelectModule } from '@angular/material/select';
+import { MatOptionModule } from '@angular/material/core';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -61,6 +65,8 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     ConformationComponent,
     ChangePasswordComponent,
     CategoryComponent,
+    ManageProductComponent,
+    ProductComponent,
     
   ],
   imports: [
@@ -84,7 +90,9 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     MatFormFieldModule,
     MatInputModule,
     MatCardModule,
-    MatTableModule
+    MatTableModule,
+    MatSelectModule,
+    MatOptionModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,23 +1,26 @@
 <!-- sidebar.component.html -->
 
 <mat-nav-list>
-    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3" [routerLink]="['/dashboard']">
+    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3"
+        [routerLink]="['/dashboard']">
         <mat-icon>dashboard</mat-icon> Dashboard
     </button>
-    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3" [routerLink]="['/category']">
+    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
+        class="btn me-2 mb-3" [routerLink]="['/category']">
         <mat-icon>category</mat-icon> Manage Category
     </button>
-    <a mat-list-item style="width: 100%;" [routerLink]="['/product']">Products</a>
-    <a mat-list-item style="width: 100%;" [routerLink]="['/bill']">Bills</a>
-    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 b" (click)="changePassword()">
+    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
+        class="btn me-2 mb-3" [routerLink]="['/product']">
+        <mat-icon>inventory</mat-icon> Manage Product
+    </button>
+    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 b"
+        (click)="changePassword()">
         <mat-icon>password</mat-icon> Change Password
     </button>
     <div style="padding-top: 10px;"></div>
-    <img src="assets/images/category.png" alt="Your Image" style="width: 100%; max-width: 100%;">
+    <img src="assets/images/category.png" alt="food" style="width: 100%; max-width: 100%;">
     <div style="padding-top: 10px;"></div>
-    <img src="assets/images/choco.jpg" alt="Your Image" style="width: 100%; max-width: 100%;">
+    <img src="assets/images/choco.jpg" alt="choco" style="width: 100%; max-width: 100%;">
 
 
 </mat-nav-list>
-
-  
