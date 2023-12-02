@@ -21,6 +21,7 @@ export class ManageCategoryComponent implements OnInit {
   displayedColumn : string[] = ['name' , 'edit'];
   dataSource : any;
   responseMessage : any;
+  role = localStorage.getItem('role');
 
   constructor(
     private ngxService: NgxUiLoaderService,
@@ -95,5 +96,14 @@ export class ManageCategoryComponent implements OnInit {
     const sub = dialogRef.componentInstance.onAddCategory.subscribe( (response) => {
       this.tableData();
     })
+  }
+
+  handleAllow(){
+    if(this.role === 'admin'){
+      this.router.navigate(['/category']);
+    }
+    else{
+      this.snackbarService.openSnackBar("You are not allowed", GlobalConstants.error);
+    }
   }
 }

@@ -36,7 +36,6 @@ export class CategoryService {
   }
 
   getAllCategory(){
-
     const jwtToken = localStorage.getItem('token');
 
     const headers = new HttpHeaders()
@@ -44,5 +43,15 @@ export class CategoryService {
     .set('Authorization', `Bearer ${jwtToken}`);
     
     return this.httpClient.get(this.API_URL + "/category/getAllCategory", {headers});
+  }
+
+  getFilteredCategorys(){
+    const jwtToken = localStorage.getItem('token');
+
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.get(this.API_URL+"/category/getAllCategory?FilterValue=true", {headers});
   }
 }

@@ -38,6 +38,10 @@ import { ManageProductComponent } from './components/manage-product/manage-produ
 import { ProductComponent } from './components/product/product.component';
 import { MatSelectModule } from '@angular/material/select';
 import { MatOptionModule } from '@angular/material/core';
+import { ManageOrderComponent } from './components/manage-order/manage-order.component';
+import { ManageUserComponent } from './components/manage-user/manage-user.component';
+import { ViewBillComponent } from './components/view-bill/view-bill.component';
+import { ViewBillProductsComponent } from './components/view-bill-products/view-bill-products.component';
 
 const ngxUiLoaderConfig : NgxUiLoaderConfig = {
   text : "Loading...",
@@ -67,6 +71,10 @@ const ngxUiLoaderConfig : NgxUiLoaderConfig = {
     CategoryComponent,
     ManageProductComponent,
     ProductComponent,
+    ManageOrderComponent,
+    ManageUserComponent,
+    ViewBillComponent,
+    ViewBillProductsComponent,
     
   ],
   imports: [

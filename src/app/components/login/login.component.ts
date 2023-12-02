@@ -50,7 +50,12 @@ export class LoginComponent implements OnInit{
         this.dialogRef.close();
         localStorage.setItem('role', response.role);
         localStorage.setItem('token', response.token);
-        this.router.navigate(['/dashboard']);
+        if(response.role === 'admin'){
+          this.router.navigate(['/dashboard']);
+        }
+        else{
+          this.router.navigate(['/order']);
+        }
       },
       (error) => {
         this.ngxService.stop();

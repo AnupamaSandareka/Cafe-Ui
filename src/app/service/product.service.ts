@@ -64,4 +64,22 @@ export class ProductService {
   
     return this.httpClient.delete(`http://localhost:8081/product/deleteProductById/${id}`, { headers });
   }
+
+  getProductByCategory(id:any){
+    const jwtToken = localStorage.getItem('token');
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.get(this.API_URL+"/product/getByCategory/"+id , {headers});
+  }
+
+  getById(id:any){
+    const jwtToken = localStorage.getItem('token');
+    const headers = new HttpHeaders()
+      .set('Content-Type', 'application/json')
+      .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.get(this.API_URL+"/product/getProductById/"+id, {headers});
+  }
 }

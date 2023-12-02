@@ -1,0 +1,72 @@
+<div class="dashboard-container">
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <app-sidebar></app-sidebar>
+    </div>
+
+    <!-- Main content -->
+    <div class="main-content">
+        <mat-card>
+            <div class="card-header">
+                <b><span style="font-family: 'Arial', sans-serif; color: #001524; font-size: 24px; padding: 15px;">View
+                        Bill</span></b>
+            </div>
+        </mat-card>
+        <hr>
+        <mat-card>
+            <mat-form-field appearance="fill">
+                <mat-label>Filter</mat-label>
+                <input matInput (keyup)="applyFilter($event)" #input>
+            </mat-form-field>   
+        </mat-card>
+        <hr>
+        <div class="responsive_table">
+            <table mat-table [dataSource]="dataSource" class="mat-elevation">
+                <ng-container matColumnDef="name">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">Name</th>
+                    <td mat-cell *matCellDef="let element" class="center-cell">{{element.name}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="email">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">Email</th>
+                    <td mat-cell *matCellDef="let element" class="center-cell">{{element.email}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="contactNumber">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">Contact Number</th>
+                    <td mat-cell *matCellDef="let element" class="center-cell">{{element.contactNumber}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="paymentMethod">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">paymentMethod</th>
+                    <td mat-cell *matCellDef="let element" class="center-cell">{{element.paymentMethod}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="total">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">Total</th>
+                    <td mat-cell *matCellDef="let element" class="center-cell">{{element.total}}</td>
+                </ng-container>
+
+                <ng-container matColumnDef="view">
+                    <th mat-header-cell *matHeaderCellDef class="center-cell">Action</th>
+                    <td mat-cell *matCellDef="let element" class="action-link" class="center-cell">
+                        <button mat-icon-button color="primary" matTooltip="View" (click)="handleViewAction(element)">
+                            <mat-icon style="color: green;">visibility</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="primary" matTooltip="Download Bill" (click)="downloadReportAction(element)">
+                            <mat-icon>download</mat-icon>
+                        </button>
+
+                        <button mat-icon-button color="primary" matTooltip="Delete" (click)="handleDeleteAction(element)">
+                            <mat-icon style="color: rgb(198, 33, 33);">delete</mat-icon>
+                        </button>
+                    </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="displayedColumns; sticky:true"></tr>
+                <tr mat-row *matRowDef="let row; columns:displayedColumns"></tr>
+            </table>
+        </div>
+    </div>
+</div>

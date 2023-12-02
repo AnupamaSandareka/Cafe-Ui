@@ -47,4 +47,24 @@ export class UserService {
     return this.httpClient.post(this.API_URL+"/user/changePassword", data, {headers});
   }
 
+  getUser(){
+    const jwtToken = localStorage.getItem('token');
+
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.get(this.API_URL+"/user/get", {headers})
+  }
+
+  update(data:any){
+    const jwtToken = localStorage.getItem('token');
+
+    const headers = new HttpHeaders()
+    .set('Content-Type', 'application/json')
+    .set('Authorization', `Bearer ${jwtToken}`);
+
+    return this.httpClient.post(this.API_URL+"/user/update", data, {headers})
+  }
+
 }

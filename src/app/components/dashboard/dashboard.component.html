@@ -20,7 +20,7 @@
             <div class="container">
               <h2 class="title"><b>Total Category</b></h2>
               <h1 class="title"><b>{{data.category}}</b></h1>
-              <p><button class="button" [routerLink]="['/category']" style="background-color: #860A35; width: 100%; font-size: 18px;">View Category</button></p>
+              <p><button class="button" (click)="handleAllow()" style="background-color: #860A35; width: 100%; font-size: 18px;">View Category</button></p>
             </div>
           </div>
         </div>
@@ -30,7 +30,7 @@
             <div class="container">
               <h2 class="title"><b>Total Product</b></h2>
               <h1 class="title"><b>{{data.product}}</b></h1>
-              <p><button class="button" [routerLink]="['/product']" style="background-color: #860A35; width: 100%; font-size: 18px;">View Product</button></p>
+              <p><button class="button" (click)="handleAllow()" style="background-color: #860A35; width: 100%; font-size: 18px;">View Product</button></p>
             </div>
           </div>
         </div>

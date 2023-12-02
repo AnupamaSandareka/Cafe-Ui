@@ -1,26 +1,43 @@
 <!-- sidebar.component.html -->
 
 <mat-nav-list>
-    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3"
+    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3"
         [routerLink]="['/dashboard']">
         <mat-icon>dashboard</mat-icon> Dashboard
     </button>
+
     <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
         class="btn me-2 mb-3" [routerLink]="['/category']">
         <mat-icon>category</mat-icon> Manage Category
     </button>
+
     <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
         class="btn me-2 mb-3" [routerLink]="['/product']">
         <mat-icon>inventory</mat-icon> Manage Product
     </button>
-    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 b"
+
+    <button style="background-color: #04364A; color: white; width: 100%;" type="submit"
+        class="btn me-2 mb-3" [routerLink]="['/order']">
+        <mat-icon>shopping_cart</mat-icon> Manage Order
+    </button>
+
+    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
+        class="btn me-2 mb-3" [routerLink]="['/bill']">
+        <mat-icon>backup_table</mat-icon> View Bill
+    </button>
+
+    <button *ngIf="role === 'admin'" style="background-color: #04364A; color: white; width: 100%;" type="submit"
+        class="btn me-2 mb-3" [routerLink]="['/user']">
+        <mat-icon>people</mat-icon> Manage Users
+    </button>
+
+    <button style="background-color: #04364A; color: white; width: 100%;" type="submit" class="btn me-2 mb-3"
         (click)="changePassword()">
         <mat-icon>password</mat-icon> Change Password
     </button>
-    <div style="padding-top: 10px;"></div>
-    <img src="assets/images/category.png" alt="food" style="width: 100%; max-width: 100%;">
-    <div style="padding-top: 10px;"></div>
-    <img src="assets/images/choco.jpg" alt="choco" style="width: 100%; max-width: 100%;">
 
+    <img src="assets/images/category.png" alt="food" style="width: 100%; max-width: 100%;" class="mb-3">
+
+    <img src="assets/images/choco.jpg" alt="choco" style="width: 100%; max-width: 100%;">
 
 </mat-nav-list>

@@ -1,5 +1,6 @@
 
 import { AfterViewInit, Component } from '@angular/core';
+import { Router } from '@angular/router';
 import { NgxUiLoaderService } from 'ngx-ui-loader';
 import { DashboardService } from 'src/app/service/dashboard.service';
 import { SnackbarService } from 'src/app/service/snackbar.service';
@@ -11,7 +12,8 @@ import { GlobalConstants } from 'src/app/shared/global-constants';
   styleUrls: ['./dashboard.component.scss']
 })
 export class DashboardComponent implements AfterViewInit{
-  API_URL = "http://localhost:8081";
+
+  role: any = localStorage.getItem('role');
 
   responseMessage : any;
   data : any;
@@ -23,6 +25,7 @@ export class DashboardComponent implements AfterViewInit{
     private dashboardService : DashboardService,
     private ngxService : NgxUiLoaderService,
     private snackbarService :SnackbarService,
+    private router:Router
   ){
     this.ngxService.start();
     this.dashboardData();
@@ -47,6 +50,15 @@ export class DashboardComponent implements AfterViewInit{
         this.snackbarService.openSnackBar(this.responseMessage, GlobalConstants.error);
       }
     );
+  }
+
+  handleAllow(){
+    if(this.role === 'admin'){
+      this.router.navigate(['/category']);
+    }
+    else{
+      this.snackbarService.openSnackBar("You are not allowed", GlobalConstants.error);
+    }
   }
   
 }
