@@ -9,17 +9,17 @@
 </mat-toolbar>
 
 <mat-dialog-content class="mat-typography">
-    <table id="Customers" class="center-cell">
+    <table id="Customers" class="center-cell custom-margin-table">
         <tr>
-            <td><b>Name: </b>{{data?.name}}</td>
+            <td class="custom-cell"><b>Name: </b>{{data?.name}}</td>
             <td></td>
-            <td><b>Email: </b>{{data?.email}}</td>
+            <td class="custom-cell"><b>Email: </b>{{data?.email}}</td>
         </tr>
-
+        <br>
         <tr>
-            <td><b>Contact Number: </b>{{data?.contactNumber}}</td>
+            <td class="custom-cell"><b>Contact Number: </b>{{data?.contactNumber}}</td>
             <td></td>
-            <td><b>PaymentMethod: </b>{{data?.paymentMethod}}</td>
+            <td class="custom-cell"><b>PaymentMethod: </b>{{data?.paymentMethod}}</td>
         </tr>
     </table>
     <div class="responsive_table">
