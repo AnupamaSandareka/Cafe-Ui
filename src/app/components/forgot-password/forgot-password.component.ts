@@ -52,5 +52,8 @@ export class ForgotPasswordComponent implements OnInit{
           this.snackBarService.openSnackBar(this.responseMessage , GlobalConstants.error);
         }
       })
+      this.dialogRef.close();
+      this.ngxService.stop();
+      this.snackBarService.openSnackBar("Check your email." , "");
     }
 }

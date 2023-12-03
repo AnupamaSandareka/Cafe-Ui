@@ -48,12 +48,22 @@ export class LoginComponent implements OnInit{
       (response: any) => {
         this.ngxService.stop();
         this.dialogRef.close();
-        localStorage.setItem('role', response.role);
-        localStorage.setItem('token', response.token);
-        if(response.role === 'admin'){
+
+        console.log(response);
+        
+  
+        // Assuming 'response' is a string, you can directly use it
+        var parts = response.message.split('|');
+        var role = parts[0];
+        var token = parts[1];
+  
+        // Save role and token in local storage
+        localStorage.setItem('role', role);
+        localStorage.setItem('token', token);
+  
+        if (role === 'admin') {
           this.router.navigate(['/dashboard']);
-        }
-        else{
+        } else {
           this.router.navigate(['/order']);
         }
       },
@@ -70,7 +80,9 @@ export class LoginComponent implements OnInit{
         this.dialogRef.close();
       }
     );
-  }  
+  }
+  
+    
 
   handleForgotPasswordAction(){
     const dialogConfig = new MatDialogConfig();
